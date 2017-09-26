@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button:active{
+            background-color: #294bff;
+        }
+    </style>
+</head>
+<script>
+    //H5調用kotlin
+    $("#btn1").on("click",function () {
+        console.log("btn1被点击了")
+        //调用Kotlin方法
+        var json = {"name":"html5"}
+        window.jsInterface.showToast(JSON.stringify(json))
+    })
+	
+	
+	var alertMessage = function(json){
+		alert(JSON.stringify(json))
+	}
+</script>
+<body>
+        <button id="btn1">js调用Kotlin方法</button>
+        <button id="btn2">js调用Kotlin方法(callback)</button>
+</body>
+</html>
