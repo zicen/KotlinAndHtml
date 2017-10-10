@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button:active{
+            background-color: #294bff;
+        }
+
+    </style>
+</head>
+<script type="text/javascript">
+
+function kotlincalljs(){
+     document.getElementById("content").innerHTML =
+         "<br\>kotlin调用了JS的无参函数";
+}
+
+function kotlincalljswith(arg){
+     document.getElementById("content").innerHTML =
+         ("<br\>"+arg);
+}
+
+
+
+</script>
+<body>
+webview内容显示<br/>
+<h1 id="content">内容</h1>
+<br/><br/>
+<input type="button"  value="js调用kotlin代码" onclick="window.jsInterface.showToast()" />
+<br/><br/>
+<input type="button"  value="js调用kotlin代码并传递参数" onclick="window.jsInterface.alertMessage('https://github.com/zicen')"  />
+</body>
+</html>

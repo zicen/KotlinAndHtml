@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.zhenquan.kotlinandhtml.MainActivity">
 
-    <WebView
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
-        android:id="@+id/webview"
+        android:layout_height="wrap_content"
+        android:text="kotlin调用JS"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kotlin携带参数调用JS"
+        android:textAllCaps="false"/>
+
+    <WebView
+        android:id="@+id/webview_main"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

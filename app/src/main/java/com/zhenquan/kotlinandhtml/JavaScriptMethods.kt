@@ -1,8 +1,10 @@
 package com.zhenquan.kotlinandhtml
 
 import android.content.Context
+import android.support.v7.app.AlertDialog
 import android.webkit.JavascriptInterface
-import org.jetbrains.anko.toast
+import android.widget.Toast
+import org.jetbrains.anko.runOnUiThread
 
 /**
  * Created by zhenquan on 2017/9/26.
@@ -20,8 +22,17 @@ class JavaScriptMethods {
      */
     @JavascriptInterface
     fun showToast(json:String){
-        mContext?.let {
-            it.toast(json)
-        }
+        mContext?.runOnUiThread { Toast.makeText(mContext, json, Toast.LENGTH_SHORT).show() }
+    }
+
+
+    @JavascriptInterface
+    fun showToast() {
+        mContext?.runOnUiThread { Toast.makeText(mContext, "show", Toast.LENGTH_SHORT).show() }
+    }
+
+    @JavascriptInterface
+    fun alertMessage(text: String) {
+        mContext?.runOnUiThread { AlertDialog.Builder(mContext!!).setMessage(text).show() }
     }
 }
